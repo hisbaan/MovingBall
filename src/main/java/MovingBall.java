@@ -43,7 +43,7 @@ public class MovingBall implements MouseListener {
     }
 
     MovingBall() {
-        movement = new Timer(100, e -> {
+        movement = new Timer(10, e -> {
             move();
             collision();
         });
@@ -89,7 +89,7 @@ public class MovingBall implements MouseListener {
             if (DEBUG) System.out.println("Hit west wall:  (" + xPos + ", " + yPos + ")");
         }
 
-        if (yPos >= FRAME_X - ballRadius) {
+        if (yPos >= FRAME_Y - ballDiameter) {
 
             yVelocity += -1;
 
